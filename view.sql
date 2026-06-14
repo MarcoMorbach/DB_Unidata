@@ -1,13 +1,14 @@
+/* Criaçao da View*/
 CREATE VIEW vw_historico_academico AS
 SELECT 
-	a.nome as Aluno, 
-	c.nome as Curso, 
-	d.nome as Disciplina, 
-	CONCAT(t.semestre, '/', t.ano)  as Período, 
-	p.nome as Professor, 
+	a.nome AS Aluno, 
+	c.nome AS Curso, 
+	d.nome AS Disciplina, 
+	CONCAT(t.semestre, '/', t.ano)  AS Período, 
+	p.nome AS Professor, 
 	m.nota as Nota, 
-	m.frequencia as Frequência, 
-	m.situacao as Situaçao
+	m.frequencia AS Frequência, 
+	m.situacao AS Situaçao
 FROM tb_matricula m
 	JOIN
 	tb_aluno a ON a.id_aluno = m.fk_aluno
@@ -21,5 +22,7 @@ FROM tb_matricula m
     tb_disciplina d ON d.id_disc = t.fk_disc
 ORDER BY a.nome;
 
+/* Teste da View*/
 SELECT * FROM vw_historico_academico;
+
 		 

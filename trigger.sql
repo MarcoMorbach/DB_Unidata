@@ -1,3 +1,4 @@
+/* Criação do Trigger*/
 DELIMITER //
 CREATE TRIGGER trg_calcula_situacao 
 BEFORE UPDATE ON tb_matricula
@@ -17,6 +18,7 @@ END //
 DELIMITER ;
 
 DROP TRIGGER  trg_calcula_situacao ;
+
 /* Aprovado */
 UPDATE tb_matricula
 SET nota = 6.0, frequencia = 90.00
